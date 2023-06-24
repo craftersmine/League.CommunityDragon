@@ -3,7 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.6.33815.320
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.League.CommunityDragon", "craftersmine.League.CommunityDragon\craftersmine.League.CommunityDragon.csproj", "{5E09E46F-2DA9-4926-9C64-D7EA8630EE77}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "craftersmine.League.CommunityDragon", "craftersmine.League.CommunityDragon\craftersmine.League.CommunityDragon.csproj", "{5E09E46F-2DA9-4926-9C64-D7EA8630EE77}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "craftersmine.League.CommunityDragon.Tests", "craftersmine.League.CommunityDragon.Tests\craftersmine.League.CommunityDragon.Tests.csproj", "{F9C42662-DCB4-4149-AD7A-A8B7026787E9}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -15,6 +17,10 @@ Global
 		{5E09E46F-2DA9-4926-9C64-D7EA8630EE77}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{5E09E46F-2DA9-4926-9C64-D7EA8630EE77}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{5E09E46F-2DA9-4926-9C64-D7EA8630EE77}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F9C42662-DCB4-4149-AD7A-A8B7026787E9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F9C42662-DCB4-4149-AD7A-A8B7026787E9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F9C42662-DCB4-4149-AD7A-A8B7026787E9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F9C42662-DCB4-4149-AD7A-A8B7026787E9}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
