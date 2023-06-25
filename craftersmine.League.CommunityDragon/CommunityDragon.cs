@@ -60,7 +60,7 @@ namespace craftersmine.League.CommunityDragon
             return items;
         }
 
-        public async Task<SummonerIconsCollection> GetSummonerIcons()
+        public async Task<SummonerIconsCollection> GetSummonerIconsAsync()
         {
             SummonerIconsCollection icons =
                 new SummonerIconsCollection(await GetAsync<SummonerIcon[]>(MetadataUri + "summoner-icons.json", null));
@@ -68,6 +68,14 @@ namespace craftersmine.League.CommunityDragon
                 icon.ClientInstance = this;
 
             return icons;
+        }
+
+        public async Task<SummonerIconSetCollection> GetSummonerIconSetsAsync()
+        {
+            SummonerIconSetCollection iconSets =
+                new SummonerIconSetCollection(
+                    await GetAsync<SummonerIconSet[]>(MetadataUri + "summoner-icon-sets.json", null));
+            return iconSets;
         }
 
         #region Internals

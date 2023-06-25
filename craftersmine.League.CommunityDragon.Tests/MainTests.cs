@@ -94,7 +94,7 @@ namespace craftersmine.League.CommunityDragon.Tests
         {
             CommunityDragon dragonEn = new CommunityDragon(VersionAlias.Latest, LeagueLocales.English);
             Assert.IsNotNull(dragonEn);
-            SummonerIconsCollection icons = await dragonEn.GetSummonerIcons();
+            SummonerIconsCollection icons = await dragonEn.GetSummonerIconsAsync();
             Assert.IsNotNull(icons);
             Assert.IsTrue(icons.Any());
 
