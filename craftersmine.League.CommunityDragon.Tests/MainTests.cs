@@ -42,24 +42,24 @@ namespace craftersmine.League.CommunityDragon.Tests
             Assert.IsNotNull(unspokenParasiteItem_IdIndexed);
             Assert.IsNotNull(unspokenParasiteItem_NameIndexed);
 
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.Id, 7026);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.Name, " The Unspoken Parasite");
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.Description, "<mainText><stats><ornnBonus> 550</ornnBonus> Health<br><ornnBonus> 40</ornnBonus> Armor<br><ornnBonus> 40</ornnBonus> Magic Resist<br><ornnBonus> 25</ornnBonus> Ability Haste</stats><br><li><passive>Voidborn Resilience:</passive> For each second in champion combat gain a stack granting <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage, healing yourself, and increasing your bonus resist until end of combat.<br><br><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>  Armor and  Magic Resist</attention>.</mainText><br>");
+            Assert.AreEqual(7026, unspokenParasiteItem_IdIndexed.Id);
+            Assert.AreEqual(" The Unspoken Parasite", unspokenParasiteItem_IdIndexed.Name);
+            Assert.AreEqual("<mainText><stats><ornnBonus> 550</ornnBonus> Health<br><ornnBonus> 40</ornnBonus> Armor<br><ornnBonus> 40</ornnBonus> Magic Resist<br><ornnBonus> 25</ornnBonus> Ability Haste</stats><br><li><passive>Voidborn Resilience:</passive> For each second in champion combat gain a stack granting <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage, healing yourself, and increasing your bonus resist until end of combat.<br><br><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>  Armor and  Magic Resist</attention>.</mainText><br>", unspokenParasiteItem_IdIndexed.Description);
             Assert.IsFalse(unspokenParasiteItem_IdIndexed.Active);
             Assert.IsFalse(unspokenParasiteItem_IdIndexed.InStore);
             Assert.IsTrue(unspokenParasiteItem_IdIndexed.CraftableFromItemIds.Contains(6665));
             Assert.IsFalse(unspokenParasiteItem_IdIndexed.CraftedToItemIds.Any());
             Assert.IsTrue(unspokenParasiteItem_IdIndexed.Categories.Any());
             Assert.IsTrue(unspokenParasiteItem_IdIndexed.Categories.Contains(ItemCategory.AbilityHaste));
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.MaxStacks, 1);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.RequiredChampion, string.Empty);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.RequiredAlly, "Ornn");
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.RequiredBuffCurrencyName, string.Empty);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.RequiredBuffCurrencyCost, 0);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.SpecialRecipeItemId, 0);
+            Assert.AreEqual(1, unspokenParasiteItem_IdIndexed.MaxStacks);
+            Assert.AreEqual(string.Empty, unspokenParasiteItem_IdIndexed.RequiredChampion);
+            Assert.AreEqual("Ornn", unspokenParasiteItem_IdIndexed.RequiredAlly);
+            Assert.AreEqual(string.Empty, unspokenParasiteItem_IdIndexed.RequiredBuffCurrencyName);
+            Assert.AreEqual(0, unspokenParasiteItem_IdIndexed.RequiredBuffCurrencyCost);
+            Assert.AreEqual(0, unspokenParasiteItem_IdIndexed.SpecialRecipeItemId);
             Assert.IsFalse(unspokenParasiteItem_IdIndexed.IsEnchantment);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.Price, 0);
-            Assert.AreEqual(unspokenParasiteItem_IdIndexed.PriceTotal, 3200);
+            Assert.AreEqual(0, unspokenParasiteItem_IdIndexed.Price);
+            Assert.AreEqual(3200, unspokenParasiteItem_IdIndexed.PriceTotal);
             
             if (OperatingSystem.IsWindows())
             {
@@ -67,24 +67,24 @@ namespace craftersmine.League.CommunityDragon.Tests
                 Image icon = Image.FromStream(iconDataStream);
             }
             
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.Id, 7026);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.Name, " The Unspoken Parasite");
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.Description, "<mainText><stats><ornnBonus> 550</ornnBonus> Health<br><ornnBonus> 40</ornnBonus> Armor<br><ornnBonus> 40</ornnBonus> Magic Resist<br><ornnBonus> 25</ornnBonus> Ability Haste</stats><br><li><passive>Voidborn Resilience:</passive> For each second in champion combat gain a stack granting <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage, healing yourself, and increasing your bonus resist until end of combat.<br><br><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>  Armor and  Magic Resist</attention>.</mainText><br>");
+            Assert.AreEqual(7026, unspokenParasiteItem_NameIndexed.Id);
+            Assert.AreEqual(" The Unspoken Parasite", unspokenParasiteItem_NameIndexed.Name);
+            Assert.AreEqual("<mainText><stats><ornnBonus> 550</ornnBonus> Health<br><ornnBonus> 40</ornnBonus> Armor<br><ornnBonus> 40</ornnBonus> Magic Resist<br><ornnBonus> 25</ornnBonus> Ability Haste</stats><br><li><passive>Voidborn Resilience:</passive> For each second in champion combat gain a stack granting <scaleArmor>Armor</scaleArmor> and <scaleMR>Magic Resist</scaleMR>, up to 8 stacks max. At max stacks become empowered, instantly draining enemies around you for magic damage, healing yourself, and increasing your bonus resist until end of combat.<br><br><rarityMythic>Mythic Passive:</rarityMythic> Grants all other <rarityLegendary>Legendary</rarityLegendary> items <attention>  Armor and  Magic Resist</attention>.</mainText><br>", unspokenParasiteItem_NameIndexed.Description);
             Assert.IsFalse(unspokenParasiteItem_NameIndexed.Active);
             Assert.IsFalse(unspokenParasiteItem_NameIndexed.InStore);
             Assert.IsTrue(unspokenParasiteItem_NameIndexed.CraftableFromItemIds.Contains(6665));
             Assert.IsFalse(unspokenParasiteItem_NameIndexed.CraftedToItemIds.Any());
             Assert.IsTrue(unspokenParasiteItem_NameIndexed.Categories.Any());
             Assert.IsTrue(unspokenParasiteItem_NameIndexed.Categories.Contains(ItemCategory.AbilityHaste));
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.MaxStacks, 1);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.RequiredChampion, string.Empty);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.RequiredAlly, "Ornn");
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.RequiredBuffCurrencyName, string.Empty);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.RequiredBuffCurrencyCost, 0);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.SpecialRecipeItemId, 0);
+            Assert.AreEqual(1, unspokenParasiteItem_NameIndexed.MaxStacks);
+            Assert.AreEqual(string.Empty, unspokenParasiteItem_NameIndexed.RequiredChampion);
+            Assert.AreEqual("Ornn", unspokenParasiteItem_NameIndexed.RequiredAlly);
+            Assert.AreEqual(string.Empty, unspokenParasiteItem_NameIndexed.RequiredBuffCurrencyName);
+            Assert.AreEqual(0, unspokenParasiteItem_NameIndexed.RequiredBuffCurrencyCost);
+            Assert.AreEqual(0, unspokenParasiteItem_NameIndexed.SpecialRecipeItemId);
             Assert.IsFalse(unspokenParasiteItem_NameIndexed.IsEnchantment);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.Price, 0);
-            Assert.AreEqual(unspokenParasiteItem_NameIndexed.PriceTotal, 3200);
+            Assert.AreEqual(0, unspokenParasiteItem_NameIndexed.Price);
+            Assert.AreEqual(3200, unspokenParasiteItem_NameIndexed.PriceTotal);
         }
 
         [TestMethod]
@@ -102,26 +102,46 @@ namespace craftersmine.League.CommunityDragon.Tests
             Assert.IsNotNull(elderwoodOrnnIcon_IdIndexed);
             Assert.IsNotNull(elderwoodOrnnIcon_TitleIndexed);
 
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Id, 4846);
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Title, "Elderwood Ornn Icon");
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.YearReleased, 2020);
+            Assert.AreEqual(4846, elderwoodOrnnIcon_IdIndexed.Id);
+            Assert.AreEqual("Elderwood Ornn Icon", elderwoodOrnnIcon_IdIndexed.Title);
+            Assert.AreEqual(2020, elderwoodOrnnIcon_IdIndexed.YearReleased);
             Assert.IsFalse(elderwoodOrnnIcon_IdIndexed.IsLegacy);
             Assert.IsTrue(elderwoodOrnnIcon_IdIndexed.Descriptions.Any());
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Descriptions[0].Region, SummonerIconRegion.Riot);
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Descriptions[0].Description, "This icon was acquired from the Event Pass Token Shop during the 2020 Battle Queens event.");
+            Assert.AreEqual(SummonerIconRegion.Riot, elderwoodOrnnIcon_IdIndexed.Descriptions[0].Region);
+            Assert.AreEqual("This icon was acquired from the Event Pass Token Shop during the 2020 Battle Queens event.", elderwoodOrnnIcon_IdIndexed.Descriptions[0].Description);
             Assert.IsTrue(elderwoodOrnnIcon_IdIndexed.Rarities.Any());
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Rarities[0].Rarity, SummonerIconRarityValue.Epic);
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.Rarities[0].Region, SummonerIconRegion.Riot);
+            Assert.AreEqual(SummonerIconRarityValue.Epic, elderwoodOrnnIcon_IdIndexed.Rarities[0].Rarity);
+            Assert.AreEqual(SummonerIconRegion.Riot, elderwoodOrnnIcon_IdIndexed.Rarities[0].Region);
             Assert.IsFalse(elderwoodOrnnIcon_IdIndexed.DisabledRegions.Any());
             Assert.IsTrue(string.IsNullOrWhiteSpace(elderwoodOrnnIcon_IdIndexed.EsportsTeam));
             Assert.IsTrue(string.IsNullOrWhiteSpace(elderwoodOrnnIcon_IdIndexed.EsportsEvent));
-            Assert.AreEqual(elderwoodOrnnIcon_IdIndexed.EsportsRegion, SummonerIconEsportsRegion.None);
+            Assert.AreEqual(SummonerIconEsportsRegion.None, elderwoodOrnnIcon_IdIndexed.EsportsRegion);
 
             if (OperatingSystem.IsWindows())
             {
                 Stream iconDataStream = await elderwoodOrnnIcon_IdIndexed.GetAssetStreamAsync();
                 Image icon = Image.FromStream(iconDataStream);
             }
+        }
+
+        [TestMethod]
+        public async Task SummonerIconSetsRequestTest()
+        {
+            CommunityDragon dragonEn = new CommunityDragon(VersionAlias.Latest, LeagueLocales.English);
+            Assert.IsNotNull(dragonEn);
+            SummonerIconSetCollection iconSets = await dragonEn.GetSummonerIconSetsAsync();
+
+            SummonerIconSet elderwoodIconSet_IdIndexed = iconSets[112];
+            SummonerIconSet elderwoodIconSet_TitleIndexed = iconSets["Elderwood"];
+
+            Assert.IsNotNull(elderwoodIconSet_IdIndexed);
+            Assert.IsNotNull(elderwoodIconSet_TitleIndexed);
+
+            Assert.AreEqual(112, elderwoodIconSet_IdIndexed.Id);
+            Assert.IsFalse(elderwoodIconSet_IdIndexed.IsHidden);
+            Assert.AreEqual("Elderwood", elderwoodIconSet_IdIndexed.DisplayName);
+            Assert.AreEqual(string.Empty, elderwoodIconSet_IdIndexed.Description);
+            Assert.IsTrue(elderwoodIconSet_IdIndexed.IconIds.Contains(4846));
         }
     }
 }
