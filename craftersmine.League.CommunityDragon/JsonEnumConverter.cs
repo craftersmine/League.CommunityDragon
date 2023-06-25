@@ -18,7 +18,7 @@ namespace craftersmine.League.CommunityDragon
 
         public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
-            if (objectType is Enum && objectType.GetCustomAttribute(typeof(JsonEnumAttribute)) is not null && reader.TokenType == JsonToken.String && reader.Value is not null)
+            if (objectType.IsEnum && objectType.GetCustomAttribute(typeof(JsonEnumAttribute)) is not null && reader.TokenType == JsonToken.String && reader.Value is not null)
                 return reader.Value.ToString()!.ParseJsonEnumValue(objectType);
 
             throw new JsonReaderException("Unable to convert " + reader.Value + " of type " + reader.TokenType +
