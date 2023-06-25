@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
@@ -38,9 +38,9 @@ namespace craftersmine.League.CommunityDragon
                 if (field.GetCustomAttribute(typeof(JsonEnumValueAttribute)) is JsonEnumValueAttribute attribute)
                 {
                     if (attribute.Value == val)
-                        return (T)field.GetValue(null);
+                        return (T)field.GetValue(null)!;
                     else if (field.Name == val)
-                        return (T)field.GetValue(null);
+                        return (T)field.GetValue(null)!;
                 }
             }
             throw new ArgumentException("Unable to find value \"" + val + "\" for " + typeof(T).FullName + " enum", nameof(val));
