@@ -8,11 +8,16 @@ namespace craftersmine.League.CommunityDragon
 {
     internal class JsonEnumValueAttribute : Attribute
     {
-        public string Value;
+        public string DefaultValue;
+        public string[] Values;
 
-        public JsonEnumValueAttribute(string value)
+        public JsonEnumValueAttribute(string defaultValue, params string[] values)
         {
-            Value = value;
+            DefaultValue = defaultValue;
+            var vals = new List<string>();
+            vals.Add(defaultValue);
+            vals.AddRange(values);
+            Values = vals.ToArray();
         }
     }
 }
