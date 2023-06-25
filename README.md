@@ -12,7 +12,7 @@ A .NET library for fetching data from [CommunityDragon](https://communitydragon.
 
 ## Supports:
 * [x] Summoner icons
-* [ ] Summoner icon sets
+* [x] Summoner icon sets
 * [ ] Challenges
 * [ ] Champion summaries
 * [ ] TFT companions
