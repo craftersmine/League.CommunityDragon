@@ -12,7 +12,7 @@ namespace craftersmine.League.CommunityDragon
         public static string GetJsonEnumValue(this Enum value)
         {
             if (value.GetType().GetMember(value.ToString())[0].GetCustomAttributes(typeof(JsonEnumValueAttribute), false)[0] is JsonEnumValueAttribute attribute)
-                return attribute.Value;
+                return attribute.DefaultValue;
             return value.ToString();
         }
 
@@ -22,7 +22,7 @@ namespace craftersmine.League.CommunityDragon
             {
                 if (field.GetCustomAttribute(typeof(JsonEnumValueAttribute)) is JsonEnumValueAttribute attribute)
                 {
-                    if (attribute.Value == val)
+                    if (attribute.Values.Contains(val))
                         return field.GetValue(null)!;
                     else if (field.Name == val)
                         return field.GetValue(null)!;
@@ -37,7 +37,7 @@ namespace craftersmine.League.CommunityDragon
             {
                 if (field.GetCustomAttribute(typeof(JsonEnumValueAttribute)) is JsonEnumValueAttribute attribute)
                 {
-                    if (attribute.Value == val)
+                    if (attribute.Values.Contains(val))
                         return (T)field.GetValue(null)!;
                     else if (field.Name == val)
                         return (T)field.GetValue(null)!;
