@@ -26,7 +26,7 @@ namespace craftersmine.League.CommunityDragon
         {
             get
             {
-                SummonerIcon? icon = _summonerIcons.FirstOrDefault(i => i.Title == title);
+                SummonerIcon? icon = _summonerIcons.FirstOrDefault(i => i.Title.Trim() == title);
                 if (icon is not null) return icon;
 
                 throw new KeyNotFoundException("Unable to find summoner icon with Title: " + title);
