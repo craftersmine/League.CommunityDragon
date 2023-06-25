@@ -1,7 +1,5 @@
 using System.Diagnostics;
 using System.Drawing;
-using System.Reflection;
-using System.Runtime.InteropServices.ComTypes;
 
 namespace craftersmine.League.CommunityDragon.Tests
 {
