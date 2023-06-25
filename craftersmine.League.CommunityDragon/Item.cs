@@ -7,8 +7,10 @@ using Newtonsoft.Json;
 
 namespace craftersmine.League.CommunityDragon
 {
-    public class Item
+    public class Item : IAsset
     {
+        internal CommunityDragon ClientInstance { get; set; }
+
         [JsonProperty("id")]
         public int Id { get; private set; }
         [JsonProperty("price")]
@@ -46,28 +48,15 @@ namespace craftersmine.League.CommunityDragon
 
         [JsonProperty("iconPath")]
         internal string IconPath { get; private set; }
-    }
 
-    [JsonEnum]
-    public enum ItemCategory
-    {
-        [JsonEnumValue("Damage")]
-        Damage,
-        [JsonEnumValue("Active")]
-        Active,
-        [JsonEnumValue("CooldownReduction")]
-        CooldownReduction,
-        [JsonEnumValue("ArmorPenetration")]
-        ArmorPenetration,
-        [JsonEnumValue("AbilityHaste")]
-        AbilityHaste,
-        [JsonEnumValue("Health")]
-        Health,
-        [JsonEnumValue("SpellBlock")]
-        SpellBlock,
-        [JsonEnumValue("Armor")]
-        Armor,
-        [JsonEnumValue("MagicResist")]
-        MagicResist
+        public async Task<Stream> GetAssetStreamAsync()
+        {
+            return await ClientInstance.GetAssetStream(GetAssetUri());
+        }
+
+        public string GetAssetUri()
+        {
+            return ClientInstance.ClientAssetsUri + "items/icons2d/" + Path.GetFileName(IconPath).ToLower();
+        }
     }
 }
