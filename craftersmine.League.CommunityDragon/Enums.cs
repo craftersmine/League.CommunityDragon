@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -240,4 +240,20 @@ namespace craftersmine.League.CommunityDragon
         Title
     }
 
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum ChampionRole
+    {
+        [JsonEnumValue("mage")]
+        Mage,
+        [JsonEnumValue("fighter")]
+        Fighter,
+        [JsonEnumValue("tank")]
+        Tank,
+        [JsonEnumValue("assassin")]
+        Assassin,
+        [JsonEnumValue("support")]
+        Support,
+        [JsonEnumValue("marksman")]
+        Marksman
+    }
 }
