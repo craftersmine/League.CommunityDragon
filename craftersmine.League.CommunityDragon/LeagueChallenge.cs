@@ -59,13 +59,14 @@ namespace craftersmine.League.CommunityDragon
         public ChallengeValueMapping ValueMapping { get; private set; }
     }
 
-    [JsonConverter(typeof(AssetConverter))]
+    [JsonConverter(typeof(AssetConverter<LeagueChallengeIcon>))]
     public class LeagueChallengeIcon : IAsset
     {
         internal const string PathRoot = "/lol-game-data/assets/ASSETS/Challenges/Config/";
 
         internal CommunityDragon ClientInstance { get; set; }
-        internal string RawPath { get; set; }
+
+        public string RawPath { get; internal set; }
 
         internal LeagueChallengeIcon(string path)
         {

@@ -47,7 +47,7 @@ namespace craftersmine.League.CommunityDragon
         public bool IsEnchantment { get; private set; }
 
         [JsonProperty("iconPath")]
-        internal string IconPath { get; private set; }
+        public string RawPath { get; private set; }
 
         public async Task<Stream> GetAssetStreamAsync()
         {
@@ -56,7 +56,7 @@ namespace craftersmine.League.CommunityDragon
 
         public string GetAssetUri()
         {
-            return ClientInstance.ClientAssetsUri + "items/icons2d/" + Path.GetFileName(IconPath).ToLower();
+            return ClientInstance.ClientAssetsUri + "items/icons2d/" + Path.GetFileName(RawPath).ToLower();
         }
     }
 }

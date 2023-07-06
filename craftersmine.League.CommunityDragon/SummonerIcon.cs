@@ -33,7 +33,7 @@ namespace craftersmine.League.CommunityDragon
         public SummonerIconRegion[] DisabledRegions { get; private set; }
 
         [JsonProperty("imagePath")]
-        internal string ImagePath { get; private set; }
+        public string RawPath { get; private set; }
 
         public async Task<Stream> GetAssetStreamAsync()
         {

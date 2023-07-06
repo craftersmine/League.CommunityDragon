@@ -7,11 +7,11 @@ using Newtonsoft.Json;
 
 namespace craftersmine.League.CommunityDragon
 {
-    internal class AssetConverter : JsonConverter
+    internal class AssetConverter<T> : JsonConverter where T : IAsset
     {
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
-            if (value is LeagueChallengeIcon icon)
+            if (value is T icon)
             {
                 writer.WriteValue(icon.RawPath);
             }

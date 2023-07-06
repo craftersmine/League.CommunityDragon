@@ -8,8 +8,10 @@ namespace craftersmine.League.CommunityDragon
 {
     public interface IAsset
     {
+        string RawPath { get; }
+
         Task<Stream> GetAssetStreamAsync();
 
-        internal string GetAssetUri();
+        string GetAssetUri();
     }
 }
