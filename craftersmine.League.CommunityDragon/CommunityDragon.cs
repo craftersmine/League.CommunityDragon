@@ -1,7 +1,9 @@
-﻿using Newtonsoft.Json;
+﻿using System.Collections.ObjectModel;
+using Newtonsoft.Json;
 
 using System.Globalization;
 using System.Net;
+using Newtonsoft.Json.Linq;
 
 namespace craftersmine.League.CommunityDragon
 {
@@ -9,7 +11,7 @@ namespace craftersmine.League.CommunityDragon
     {
         internal const string MetadataUriFormat = "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/{1}/v1/";
         internal const string ClientAssetsUriFormat =
-            "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/default/assets/"; 
+            "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/default/assets/";
 
         private HttpClient _httpClient;
 
@@ -78,6 +80,19 @@ namespace craftersmine.League.CommunityDragon
             return iconSets;
         }
 
+        public async Task<LeagueChallengesCollection> GetLeagueChallengesAsync()
+        {
+            JObject obj = await GetAsync<JObject>(MetadataUri + "challenges.json", null);
+            Dictionary<int, LeagueChallenge>
+                challenges = obj["challenges"].ToObject<Dictionary<int, LeagueChallenge>>();
+            foreach (LeagueChallenge challenge in challenges.Values)
+            {
+                foreach (LeagueChallengeIcon icon in challenge.ChallengeIcons.Values)
+                    icon.ClientInstance = this;
+            }
+            return new LeagueChallengesCollection(challenges);
+        }
+
         #region Internals
 
         internal async Task<Stream> GetAssetStream(string assetPath)
@@ -122,7 +137,7 @@ namespace craftersmine.League.CommunityDragon
 
             if (string.IsNullOrWhiteSpace(responseStr))
                 throw new CommunityDragonRequestException(response.StatusCode);
-            
+
             throw new CommunityDragonRequestException(HttpStatusCode.BadRequest, "Unknown error has occurred when requesting CommunityDragon!");
 
         }

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -183,4 +183,61 @@ namespace craftersmine.League.CommunityDragon
         Rare = 1,
         None = 0
     }
+
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum LeagueChallengeRank
+    {
+        [JsonEnumValue("IRON")]
+        Iron,
+        [JsonEnumValue("BRONZE")]
+        Bronze,
+        [JsonEnumValue("SILVER")]
+        Silver,
+        [JsonEnumValue("GOLD")]
+        Gold,
+        [JsonEnumValue("PLATINUM")]
+        Platinum,
+        [JsonEnumValue("DIAMOND")]
+        Diamond,
+        [JsonEnumValue("MASTER")]
+        Master,
+        [JsonEnumValue("GRANDMASTER")]
+        Grandmaster,
+        [JsonEnumValue("CHALLENGER")]
+        Challenger
+    }
+
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum LeagueChallengeSource
+    {
+        [JsonEnumValue("CHALLENGES")]
+        Challenges,
+        [JsonEnumValue("EOGD")]
+        EOGD,
+        [JsonEnumValue("CAP_INVENTORY")]
+        CapInventory,
+        [JsonEnumValue("CLASH")]
+        Clash,
+        [JsonEnumValue("ETERNALS")]
+        Eternals,
+        [JsonEnumValue("SUMMONER")]
+        Summoner,
+        [JsonEnumValue("RANKED")]
+        Ranked
+    }
+
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum ChallengeValueMapping
+    {
+        [JsonEnumValue("tierNames")]
+        TierNames
+    }
+
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum ChallengeCategory
+    {
+        [JsonEnumValue("TITLE")]
+        Title
+    }
+
 }

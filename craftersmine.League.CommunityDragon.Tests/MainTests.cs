@@ -143,5 +143,46 @@ namespace craftersmine.League.CommunityDragon.Tests
             Assert.AreEqual(string.Empty, elderwoodIconSet_IdIndexed.Description);
             Assert.IsTrue(elderwoodIconSet_IdIndexed.IconIds.Contains(4846));
         }
+
+        [TestMethod]
+        public async Task LeagueChallengesTest()
+        {
+            int challengeId = 402406;
+            CommunityDragon dragonEn = new CommunityDragon(VersionAlias.Latest, LeagueLocales.English);
+            Assert.IsNotNull(dragonEn);
+            LeagueChallengesCollection challenges = await dragonEn.GetLeagueChallengesAsync();
+            LeagueChallenge challenge = challenges[challengeId];
+            Assert.IsNotNull(challenge);
+            Assert.AreEqual("Multi-Weapon Master", challenge.Name);
+            Assert.AreEqual("Win with each of different mythic items", challenge.Description);
+            Assert.AreEqual("Win with <em>different mythic items</em>", challenge.DescriptionShort);
+            Assert.IsFalse(challenge.IsLeaderboard);
+            Assert.IsFalse(challenge.IsReverseDirection);
+            Assert.IsTrue(challenge.QueueIds.Any());
+            Assert.IsTrue(challenge.QueueIds.Contains(400));
+            Assert.IsFalse(challenge.Seasons.Any());
+            Assert.AreEqual(LeagueChallengeSource.EOGD, challenge.Source);
+            Assert.AreEqual(DateTime.UnixEpoch, challenge.EndTimestamp);
+            Assert.IsNotNull(challenge.Tags);
+            Assert.AreEqual(402400, challenge.Tags.Parent);
+            Assert.AreEqual("$[?(@.epicness == 'EPICNESS_MYTHIC' && 'Items/ItemGroups/OrnnItems' nin @.groups)].id", challenge.Tags.ItemQuery);
+            Assert.IsNotNull(challenge.ChallengeIcons);
+            Assert.IsTrue(challenge.ChallengeIcons.Any());
+            Assert.IsTrue(challenge.ChallengeIcons.ContainsKey(LeagueChallengeRank.Challenger));
+            LeagueChallengeIcon icon = challenge.ChallengeIcons[LeagueChallengeRank.Challenger];
+            Assert.IsNotNull(icon);
+            Assert.AreEqual(dragonEn.ClientAssetsUri + "challenges/config/402406/tokens/challenger.png",icon.GetAssetUri());
+            Assert.IsTrue(challenge.Thresholds.Any());
+            Assert.IsTrue(challenge.Thresholds.ContainsKey(LeagueChallengeRank.Master));
+            Assert.IsFalse(challenge.Thresholds.ContainsKey(LeagueChallengeRank.Challenger));
+            LeagueChallengeThreshold threshold = challenge.Thresholds[LeagueChallengeRank.Master];
+            Assert.IsNotNull(threshold);
+            Assert.AreEqual(23.0, threshold.Value, 0.01);
+
+            if (OperatingSystem.IsWindows())
+            {
+                Image img = Image.FromStream(await challenges[challengeId].ChallengeIcons[LeagueChallengeRank.Challenger].GetAssetStreamAsync());
+            }
+        }
     }
 }
