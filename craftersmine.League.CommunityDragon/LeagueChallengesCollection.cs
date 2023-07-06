@@ -18,7 +18,7 @@ namespace craftersmine.League.CommunityDragon
                 if (_leagueChallenges.ContainsKey(id))
                     return _leagueChallenges[id];
 
-                throw new KeyNotFoundException("Unable to find summoner icon with ID: " + id);
+                throw new KeyNotFoundException("Unable to find challenge with ID: " + id);
             }
         }
 
