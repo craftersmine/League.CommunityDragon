@@ -68,7 +68,7 @@ namespace craftersmine.League.CommunityDragon
 
         public string RawPath { get; internal set; }
 
-        internal LeagueChallengeIcon(string path)
+        public LeagueChallengeIcon(string path)
         {
             RawPath = path;
         }
