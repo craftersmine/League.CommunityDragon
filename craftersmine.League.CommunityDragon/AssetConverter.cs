@@ -7,7 +7,7 @@ using Newtonsoft.Json;
 
 namespace craftersmine.League.CommunityDragon
 {
-    internal class ChallengeIconConverter : JsonConverter
+    internal class AssetConverter : JsonConverter
     {
         public override void WriteJson(JsonWriter writer, object? value, JsonSerializer serializer)
         {
@@ -30,7 +30,7 @@ namespace craftersmine.League.CommunityDragon
                     return icon;
                 }
             }
-            if (reader.TokenType == null)
+            if (reader.TokenType == JsonToken.Null)
                 return null;
 
             throw new JsonReaderException("Unexpected value \"" + reader.Value + "\" of " + reader.Path +
