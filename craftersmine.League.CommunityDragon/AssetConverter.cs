@@ -26,8 +26,8 @@ namespace craftersmine.League.CommunityDragon
             {
                 if (reader.Value is string path)
                 {
-                    LeagueChallengeIcon icon = new LeagueChallengeIcon(path);
-                    return icon;
+                    T asset = (T)Activator.CreateInstance(typeof(T), path);
+                    return asset;
                 }
             }
             if (reader.TokenType == JsonToken.Null)
