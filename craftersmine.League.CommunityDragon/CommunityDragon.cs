@@ -1,4 +1,4 @@
-using System.Collections.ObjectModel;
+﻿using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
 using System.Globalization;
@@ -96,6 +96,18 @@ namespace craftersmine.League.CommunityDragon
                     icon.ClientInstance = this;
             }
             return new LeagueChallengesCollection(challenges);
+        }
+
+        public async Task<ChampionsCollection> GetChampionsAsync()
+        {
+            Champion[] champions = await GetAsync<Champion[]>(MetadataUri + "champion-summary.json", null);
+            foreach (Champion champion in champions)
+            {
+                champion.ClientInstance = this;
+                champion.PortraitIcon.ClientInstance = this;
+            }
+
+            return new ChampionsCollection(champions);
         }
 
         #region Internals
