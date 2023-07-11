@@ -1,4 +1,4 @@
-﻿using System.Collections.ObjectModel;
+using System.Collections.ObjectModel;
 using Newtonsoft.Json;
 
 using System.Globalization;
@@ -13,10 +13,13 @@ namespace craftersmine.League.CommunityDragon
         internal const string ClientAssetsUriFormat =
             "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/default/assets/";
 
+        internal const string GameAssetsUriFormat = "https://raw.communitydragon.org/{0}/game/assets/";
+
         private HttpClient _httpClient;
 
         public Uri MetadataUri { get; }
         public Uri ClientAssetsUri { get; }
+        public Uri GameAssetsUri { get; }
 
         public CommunityDragon(VersionAlias version, CultureInfo locale)
         {
@@ -38,6 +41,7 @@ namespace craftersmine.League.CommunityDragon
             }
             MetadataUri = new Uri(string.Format(MetadataUriFormat, gameVer, localeStr));
             ClientAssetsUri = new Uri(string.Format(ClientAssetsUriFormat, gameVer));
+            GameAssetsUri = new Uri(string.Format(GameAssetsUriFormat, gameVer));
         }
 
         public CommunityDragon(Version gameVersion, CultureInfo locale)
@@ -51,6 +55,7 @@ namespace craftersmine.League.CommunityDragon
             string gameVer = gameVersion.Major + "." + gameVersion.Minor;
             MetadataUri = new Uri(string.Format(MetadataUriFormat, gameVer, localeStr));
             ClientAssetsUri = new Uri(string.Format(ClientAssetsUriFormat, gameVer));
+            GameAssetsUri = new Uri(string.Format(GameAssetsUriFormat, gameVer));
         }
 
         public async Task<ItemsCollection> GetItemsAsync()
