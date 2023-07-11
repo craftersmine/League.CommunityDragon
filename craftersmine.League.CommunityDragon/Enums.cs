@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -255,5 +255,29 @@ namespace craftersmine.League.CommunityDragon
         Support,
         [JsonEnumValue("marksman")]
         Marksman
+    }
+
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum ChampionDamageType
+    {
+        [JsonEnumValue("kMagic")]
+        Magic,
+        [JsonEnumValue("kPhysical")]
+        Physical
+    }
+    
+    [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
+    public enum ChampionSkinRarity
+    {
+        [JsonEnumValue("kNoRarity")]
+        NoRarity,
+        [JsonEnumValue("kEpic")]
+        Epic,
+        [JsonEnumValue("kLegendary")]
+        Legendary,
+        [JsonEnumValue("kMythic")]
+        Mythic,
+        [JsonEnumValue("kUltimate")]
+        Ultimate
     }
 }
