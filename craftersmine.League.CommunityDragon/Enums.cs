@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -81,7 +81,7 @@ namespace craftersmine.League.CommunityDragon
     }
 
     [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
-    public enum SummonerIconRegion
+    public enum AssetRegion
     {
         [JsonEnumValue("")]
         None,
@@ -134,7 +134,7 @@ namespace craftersmine.League.CommunityDragon
     }
 
     [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
-    public enum SummonerIconEsportsRegion
+    public enum AssetEsportsRegion
     {
         [JsonEnumValue("")]
         None,

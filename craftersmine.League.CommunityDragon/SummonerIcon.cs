@@ -24,13 +24,13 @@ namespace craftersmine.League.CommunityDragon
         [JsonProperty("esportsEvent")]
         public string EsportsEvent { get; private set; }
         [JsonProperty("esportsRegion")]
-        public SummonerIconEsportsRegion EsportsRegion { get; private set; }
+        public AssetEsportsRegion EsportsRegion { get; private set; }
         [JsonProperty("descriptions")]
         public SummonerIconDescription[] Descriptions { get; private set; }
         [JsonProperty("rarities")]
         public SummonerIconRarity[] Rarities { get; private set; }
         [JsonProperty("disabledRegions")]
-        public SummonerIconRegion[] DisabledRegions { get; private set; }
+        public AssetRegion[] DisabledRegions { get; private set; }
 
         [JsonProperty("imagePath")]
         public string RawPath { get; private set; }
@@ -49,7 +49,7 @@ namespace craftersmine.League.CommunityDragon
     public class SummonerIconDescription
     {
         [JsonProperty("region")]
-        public SummonerIconRegion Region { get; private set; }
+        public AssetRegion Region { get; private set; }
         [JsonProperty("description")]
         public string Description { get; private set; }
     }
@@ -57,7 +57,7 @@ namespace craftersmine.League.CommunityDragon
     public class SummonerIconRarity
     {
         [JsonProperty("region")]
-        public SummonerIconRegion Region { get; private set; }
+        public AssetRegion Region { get; private set; }
         [JsonProperty("rarity")]
         public SummonerIconRarityValue Rarity { get; private set; }
     }

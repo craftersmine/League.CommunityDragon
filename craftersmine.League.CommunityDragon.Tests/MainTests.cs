@@ -107,15 +107,15 @@ namespace craftersmine.League.CommunityDragon.Tests
             Assert.AreEqual(2020, elderwoodOrnnIcon_IdIndexed.YearReleased);
             Assert.IsFalse(elderwoodOrnnIcon_IdIndexed.IsLegacy);
             Assert.IsTrue(elderwoodOrnnIcon_IdIndexed.Descriptions.Any());
-            Assert.AreEqual(SummonerIconRegion.Riot, elderwoodOrnnIcon_IdIndexed.Descriptions[0].Region);
+            Assert.AreEqual(AssetRegion.Riot, elderwoodOrnnIcon_IdIndexed.Descriptions[0].Region);
             Assert.AreEqual("This icon was acquired from the Event Pass Token Shop during the 2020 Battle Queens event.", elderwoodOrnnIcon_IdIndexed.Descriptions[0].Description);
             Assert.IsTrue(elderwoodOrnnIcon_IdIndexed.Rarities.Any());
             Assert.AreEqual(SummonerIconRarityValue.Epic, elderwoodOrnnIcon_IdIndexed.Rarities[0].Rarity);
-            Assert.AreEqual(SummonerIconRegion.Riot, elderwoodOrnnIcon_IdIndexed.Rarities[0].Region);
+            Assert.AreEqual(AssetRegion.Riot, elderwoodOrnnIcon_IdIndexed.Rarities[0].Region);
             Assert.IsFalse(elderwoodOrnnIcon_IdIndexed.DisabledRegions.Any());
             Assert.IsTrue(string.IsNullOrWhiteSpace(elderwoodOrnnIcon_IdIndexed.EsportsTeam));
             Assert.IsTrue(string.IsNullOrWhiteSpace(elderwoodOrnnIcon_IdIndexed.EsportsEvent));
-            Assert.AreEqual(SummonerIconEsportsRegion.None, elderwoodOrnnIcon_IdIndexed.EsportsRegion);
+            Assert.AreEqual(AssetEsportsRegion.None, elderwoodOrnnIcon_IdIndexed.EsportsRegion);
 
             if (OperatingSystem.IsWindows())
             {
