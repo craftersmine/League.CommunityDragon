@@ -150,7 +150,7 @@ namespace craftersmine.League.CommunityDragon
 
             var responseStr = await response.Content.ReadAsStringAsync();
 
-            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(responseStr);
+            if (response.IsSuccessStatusCode) return JsonConvert.DeserializeObject<T>(responseStr, new ColorConverter());
 
             if (string.IsNullOrWhiteSpace(responseStr))
                 throw new CommunityDragonRequestException(response.StatusCode);

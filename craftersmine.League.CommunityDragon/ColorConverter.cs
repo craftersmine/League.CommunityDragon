@@ -17,7 +17,10 @@ namespace craftersmine.League.CommunityDragon
         public override object? ReadJson(JsonReader reader, Type objectType, object? existingValue, JsonSerializer serializer)
         {
             if (reader.TokenType == JsonToken.String && reader.Value is string colorValue)
-                return Color.FromArgb(Convert.ToInt32(colorValue.Replace("#", "")));
+            {
+                string colorStr = colorValue.Replace("#", "");
+                return Color.FromArgb(Convert.ToInt32(colorStr, 16));
+            }
             else return Color.White;
         }
 
