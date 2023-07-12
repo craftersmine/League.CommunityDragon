@@ -263,7 +263,9 @@ namespace craftersmine.League.CommunityDragon
         [JsonEnumValue("kMagic")]
         Magic,
         [JsonEnumValue("kPhysical")]
-        Physical
+        Physical,
+        [JsonEnumValue("kMixed")]
+        Mixed
     }
     
     [JsonEnum, JsonConverter(typeof(JsonEnumConverter))]
