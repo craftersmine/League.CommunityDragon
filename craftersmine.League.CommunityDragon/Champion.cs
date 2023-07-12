@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -56,12 +56,9 @@ namespace craftersmine.League.CommunityDragon
                     }
                 }
             }
-            if (_summary.BanVoiceOver is not null)
-                _summary.BanVoiceOver.ClientInstance = ClientInstance;
-            if (_summary.BanVoiceOver is not null)
-                _summary.BanVoiceOver.ClientInstance = ClientInstance;
-            if (_summary.BanVoiceOver is not null)
-                _summary.BanVoiceOver.ClientInstance = ClientInstance;
+            _summary.Passive.AbilityIcon.ClientInstance = ClientInstance;
+            foreach (ChampionSpell spell in _summary.Spells)
+                spell.AbilityIcon.ClientInstance = ClientInstance;
 
             return _summary;
         }
@@ -71,7 +68,11 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionPortraitIcon : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        public ChampionPortraitIcon(string path) { }
+
+        public ChampionPortraitIcon(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -140,7 +141,11 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionSfxAsset : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionSfxAsset(string path) { }
+        
+        public ChampionSfxAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -159,7 +164,11 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionChooseVoiceOverAsset : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionChooseVoiceOverAsset(string path) { }
+        
+        public ChampionChooseVoiceOverAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -178,7 +187,11 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionBanVoiceOverAsset : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionBanVoiceOverAsset(string path) { }
+        
+        public ChampionBanVoiceOverAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -240,7 +253,11 @@ namespace craftersmine.League.CommunityDragon
     {
         private const string ChampionSplashPath = "/lol-game-data/assets/v1/champion-splashes/";
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionSplashAsset(string path) { }
+        
+        public ChampionSplashAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -259,7 +276,11 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionTileAsset : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionTileAsset(string path) { }
+        
+        public ChampionTileAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -278,9 +299,13 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionClientGameAsset : IAsset
     {
         private const string LoadingScreenPathRoot = "/lol-game-data/assets/ASSETS/Characters/";
+        
+        public ChampionClientGameAsset(string path)
+        {
+            RawPath = path;
+        }
 
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionClientGameAsset(string path) { }
 
         public string RawPath { get; internal set; }
 
@@ -321,7 +346,11 @@ namespace craftersmine.League.CommunityDragon
     {
         private const string ChampionSplashPath = "/lol-game-data/assets/v1/champion-chroma-images/";
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionChromaAsset(string path) { }
+        
+        public ChampionChromaAsset(string path)
+        {
+            RawPath = path;
+        }
 
         public string RawPath { get; internal set; }
 
@@ -344,12 +373,12 @@ namespace craftersmine.League.CommunityDragon
         public string Name { get; private set; }
         [JsonProperty("chromaPath")]
         public ChampionChromaAsset ChromaImage { get; private set; }
-        [JsonProperty("colors"), JsonConverter(typeof(ColorConverter))]
+        [JsonProperty("colors")/*, JsonConverter(typeof(ColorConverter))*/]
         public Color[] Colors { get; private set; }
         [JsonProperty("descriptions")]
-        public ChampionChromaDescription Description { get; private set; }
+        public ChampionChromaDescription[] Description { get; private set; }
         [JsonProperty("rarities")]
-        public ChampionChromaRarities Rarities { get; private set; }
+        public ChampionChromaRarities[] Rarities { get; private set; }
     }
 
     public class ChampionChromaDescription
