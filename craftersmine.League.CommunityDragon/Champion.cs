@@ -71,7 +71,7 @@ namespace craftersmine.League.CommunityDragon
     public class ChampionPortraitIcon : IAsset
     {
         internal CommunityDragon ClientInstance { get; set; }
-        internal ChampionPortraitIcon(string path) { }
+        public ChampionPortraitIcon(string path) { }
 
         public string RawPath { get; internal set; }
 
