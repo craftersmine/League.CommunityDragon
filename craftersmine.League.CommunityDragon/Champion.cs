@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
@@ -26,7 +26,7 @@ namespace craftersmine.League.CommunityDragon
         [JsonProperty("roles")]
         public ChampionRole[] Roles { get; private set; }
 
-        public async Task<ChampionSummary?> GetSummary()
+        public async Task<ChampionSummary?> GetSummaryAsync()
         {
             if (_summary is null)
                 _summary = await ClientInstance.GetAsync<ChampionSummary>(ClientInstance.MetadataUri + "champions/" + Id +
