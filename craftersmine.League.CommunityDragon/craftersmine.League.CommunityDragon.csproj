@@ -5,7 +5,7 @@
 		<ImplicitUsings>enable</ImplicitUsings>
 		<Nullable>enable</Nullable>
 		<LangVersion>10.0</LangVersion>
-		<Version>0.3.1-dev</Version>
+		<Version>0.3.2-dev</Version>
 		<Authors>craftersmine</Authors>
 		<Description>C#/.NET wrapper for Community Dragon</Description>
 		<Copyright>Copyright © craftersmine 2023</Copyright>
