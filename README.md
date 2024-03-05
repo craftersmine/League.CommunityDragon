@@ -8,7 +8,7 @@ A .NET library for fetching data from [CommunityDragon](https://communitydragon.
 [![GitHub Project Wiki](https://img.shields.io/badge/docs-github--wiki-brightgreen)](https://github.com/craftersmine/League.CommunityDragon/wiki)
 ![Discord](https://img.shields.io/badge/discord-craftersmine-5865f2?logo=discord&logoColor=white)
 ![GitHub Repo stars](https://img.shields.io/github/stars/craftersmine/League.CommunityDragon)
-![Maintenance](https://img.shields.io/maintenance/yes/2023)
+![Maintenance](https://img.shields.io/maintenance/yes/2025)
 
 ## Supports:
 * [x] Summoner icons
