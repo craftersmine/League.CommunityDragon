@@ -42,7 +42,7 @@ namespace craftersmine.League.CommunityDragon
 
         public string GetAssetUri()
         {
-            return ClientInstance.MetadataUri + "profile-icons/" + Path.GetFileName(RawPath);
+            return ClientInstance.MetadataUriInvariant + "profile-icons/" + Path.GetFileName(RawPath);
         }
     }
 

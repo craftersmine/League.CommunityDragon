@@ -83,7 +83,7 @@ namespace craftersmine.League.CommunityDragon
 
         public string GetAssetUri()
         {
-            return ClientInstance.MetadataUri + "champion-icons/" + Path.GetFileName(RawPath).ToLower();
+            return ClientInstance.MetadataUriInvariant + "champion-icons/" + Path.GetFileName(RawPath).ToLower();
         }
     }
 
