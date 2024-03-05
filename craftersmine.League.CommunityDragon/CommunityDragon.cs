@@ -10,6 +10,9 @@ namespace craftersmine.League.CommunityDragon
     public class CommunityDragon
     {
         internal const string MetadataUriFormat = "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/{1}/v1/";
+
+        internal const string MetadataUriInvariantFormat =
+            "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/default/v1/";
         internal const string ClientAssetsUriFormat =
             "https://raw.communitydragon.org/{0}/plugins/rcp-be-lol-game-data/global/default/assets/";
 
@@ -18,6 +21,7 @@ namespace craftersmine.League.CommunityDragon
         private HttpClient _httpClient;
 
         public Uri MetadataUri { get; }
+        public Uri MetadataUriInvariant { get; }
         public Uri ClientAssetsUri { get; }
         public Uri GameAssetsUri { get; }
 
@@ -40,6 +44,7 @@ namespace craftersmine.League.CommunityDragon
                     break;
             }
             MetadataUri = new Uri(string.Format(MetadataUriFormat, gameVer, localeStr));
+            MetadataUriInvariant = new Uri(string.Format(MetadataUriInvariantFormat, gameVer));
             ClientAssetsUri = new Uri(string.Format(ClientAssetsUriFormat, gameVer));
             GameAssetsUri = new Uri(string.Format(GameAssetsUriFormat, gameVer));
         }
